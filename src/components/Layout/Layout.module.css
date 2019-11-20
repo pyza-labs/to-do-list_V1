@@ -1,0 +1,11 @@
+.Lay {
+  margin: auto 20px auto;
+  background-color: rgb(36, 32, 32);
+  color: #808080;
+  padding: 10px;
+  text-align: left;
+}
+.Lay h2 {
+  display: inline-block;
+  color: #fff;
+}

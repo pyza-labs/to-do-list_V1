@@ -1,0 +1,28 @@
+.Button {
+  margin: 10px;
+  background-color: red;
+  border: 1px solid red;
+  padding: 10px;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+}
+.Button:hover {
+  background-color: transparent;
+  color: red;
+}
+.MainButton {
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(36, 32, 32);
+  border: none;
+  color: #808080;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.1s ease-in;
+}
+.MainButton:hover {
+  color: red;
+}

@@ -1,0 +1,38 @@
+.Add {
+  display: flex;
+  margin: 2px;
+  padding: 2px;
+}
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  color: #404040;
+  text-align: center;
+  line-height: 16px;
+  border: 1px solid #808080;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 150ms ease-in;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+.checkbox:hover {
+  background-color: rgb(128, 128, 128, 0.2);
+}
+.checkbox svg {
+  border: 1px solid transparent;
+  height: 12px;
+  fill: rgb(36, 32, 32);
+  transition: fill 150ms ease-in;
+  width: 12px;
+}
+.checkbox svg:hover {
+  fill: #808080;
+}
+.strikeDisplay {
+  text-decoration: line-through;
+  display: none;
+}
