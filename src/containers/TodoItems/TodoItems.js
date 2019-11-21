@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import ToCss from "./TodoItems.module.css";
 import Button from "../../components/Button/Button";
-import AddTask from "../../components/AddTask/AddTask";
+import Todo from "../../components/Todo/Todo";
 
 const TodoItems = () => {
   const [todos = [], setTodos] = useState();
   const [isShowingInputUI = false, setIsShowingInputUI] = useState();
   const [text = "", setText] = useState();
+
   const clickHandler = event => {
     setIsShowingInputUI(true);
     if (text) {
@@ -14,12 +15,15 @@ const TodoItems = () => {
       setText("");
     }
   };
+
   const cancelHandler = () => {
     setIsShowingInputUI(false);
   };
+
   const changeHandler = event => {
     setText(event.target.value);
   };
+
   const enterHandler = event => {
     if (event.key === "Enter") {
       if (text) {
@@ -32,9 +36,9 @@ const TodoItems = () => {
   return (
     <div>
       {todos.map((todo, index) => (
-        <AddTask key={index} clickRemove={todo}>
+        <Todo key={index} clickRemove={todo}>
           {todo}
-        </AddTask>
+        </Todo>
       ))}
       {isShowingInputUI && (
         <input
@@ -59,20 +63,3 @@ const TodoItems = () => {
   );
 };
 export default TodoItems;
-
-//   return (
-//     <Aux>
-//       {type ? <AddTask task={todos}></AddTask> : null}
-//       {isShowingInputUI ? (
-//         <AddInput
-//           change={changeHandler}
-//           enter={enterHandler}
-//           task={todos}
-//         ></AddInput>
-//       ) : null}
-//       <div className={ToCss.To}>
-//         <Button click={clickHandler}>Add Items</Button>
-//         <Button click={cancelHandler}>Cancel</Button>
-//       </div>
-//     </Aux>
-//   );

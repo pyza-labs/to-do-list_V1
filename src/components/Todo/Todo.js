@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import AddCss from "./AddTask.module.css";
+import AddCss from "./Todo.module.css";
 // import { check, checkMark } from "../../assets/assets";
 // import check2 from "../../assets/div_svg.svg";
-const AddTask = props => {
+const Todo = props => {
   const [classes = AddCss.Add, setClasses] = useState();
   return (
     <div className={classes}>
@@ -18,4 +18,4 @@ const AddTask = props => {
     </div>
   );
 };
-export default AddTask;
+export default Todo;
