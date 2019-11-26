@@ -1,13 +1,13 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
 import "./App.css";
-import TodoItems from "../TodoItems/TodoItems";
+import Homescreen from "../Homscreen/Homescreen";
 
 function App() {
   return (
     <div className="App">
       <Layout>
-        <TodoItems></TodoItems>
+        <Homescreen></Homescreen>
       </Layout>
     </div>
   );

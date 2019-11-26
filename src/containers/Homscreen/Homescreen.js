@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ToCss from "./TodoItems.module.css";
+import ToCss from "./Homescreen.module.css";
 import Button from "../../components/Button/Button";
 import Todo from "../../components/Todo/Todo";
 
@@ -7,6 +7,7 @@ const TodoItems = () => {
   const [todos = [], setTodos] = useState();
   const [isShowingInputUI = false, setIsShowingInputUI] = useState();
   const [text = "", setText] = useState();
+  const [isEditTodo = false, setIsEditTodo] = useState();
 
   const clickHandler = event => {
     setIsShowingInputUI(true);
@@ -33,14 +34,35 @@ const TodoItems = () => {
     }
   };
 
+  const editHandler = boolVal => {
+    setIsEditTodo(boolVal);
+    console.log(boolVal);
+  };
+
+  // const editSaveHandler = () => {
+  //   let arrayTodo = [...todos];
+  //   if (text) {
+  //     arrayTodo.splice(index, 1, text);
+  //     console.log(index);
+  //     setTodos(arrayTodo);
+  //     setText("");
+  //     let arrayEdit = [...editTodo];
+  //     arrayEdit.splice(index, 0, false);
+  //     setEditTodo(arrayEdit);
+  //   }
+  // };
+
   return (
     <div>
-      {todos.map((todo, index) => (
-        <Todo key={index} clickRemove={todo}>
-          {todo}
-        </Todo>
+      {todos.map((todo, arrIndex) => (
+        <Todo
+          key={arrIndex}
+          clickRemove={todo}
+          todo={todo}
+          clickEdit={editHandler}
+        ></Todo>
       ))}
-      {isShowingInputUI && (
+      {isShowingInputUI && !isEditTodo && (
         <input
           value={text}
           onChange={changeHandler}
@@ -48,7 +70,7 @@ const TodoItems = () => {
           placeholder="Yes tell me your task"
         ></input>
       )}
-      {!!text && (
+      {!!text && !isEditTodo && (
         <div className={ToCss.To}>
           <Button click={clickHandler}>Add task</Button>
           <Button click={cancelHandler}>Cancel</Button>
